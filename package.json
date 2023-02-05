@@ -1,0 +1,19 @@
+{
+  "name": "ytcmo",
+  "version": "1.0.0",
+  "description": "A utility to format .csv files from Youtube Channel memberships to text",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "youtube",
+    "channel",
+    "memberships",
+    "formatter"
+  ],
+  "author": "Renan Torres (Pesterenan)",
+  "license": "ISC"
+}
