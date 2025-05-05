@@ -10,8 +10,9 @@ import {
 } from "./utils.js";
 
 const CSV_FILE = fs.readFileSync(INPUT_FILE_NAME, "utf-8");
-const filterLevel = "Super Pestinha!";
+const superPestinhaFilterLevel = "Super Pestinha!";
 console.log("Welcome to YTCMO\n");
+
 const formatYoutubeMemberships = (inputFile, level) => {
   const dataObj = inputFile.split("\n");
   dataObj.pop();
@@ -28,6 +29,7 @@ const formatYoutubeMemberships = (inputFile, level) => {
     })
     .sort(sortByName)
     .filter((member) => filterSuper(member, level));
+  console.log(`Number of members: ${memberships.length}`)
 
   const members = memberships.reduce((acc, member) => {
     acc += formatName(member.name);
@@ -44,5 +46,5 @@ const timecode = `
 const result = formatTimecodeToYoutubeTimeCode(timecode, MPC_TIMECODE_REGEX);
 // console.log(result);
 
-const data = formatYoutubeMemberships(CSV_FILE, filterLevel);
+const data = formatYoutubeMemberships(CSV_FILE, superPestinhaFilterLevel);
 fs.writeFileSync(OUTPUT_FILE_NAME, data);
